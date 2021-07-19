@@ -17,7 +17,7 @@ public class TodoMenuParameter {
     this.parentIds = parentIds;
   }
 
-  public static TodoMenuParameter parse(String input) {
+public static TodoMenuParameter parse(String input) {
     String[] parsed = input.split(" ");
     TodoMenu menu = TodoMenu.fromMenuNumber(parsed[0]);
     switch (menu) {
@@ -33,12 +33,19 @@ public class TodoMenuParameter {
         return remove(parsed);
       case FINISH:
         return finish(parsed);
+      case SEARCH:
+    	return search(parsed);
       default:
         throw new IllegalStateException("Wrong menu. try again.");
     }
   }
 
-  private static TodoMenuParameter finish(String[] parsed) {
+  private static TodoMenuParameter search(String[] parsed) {
+	String content = parsed[1];
+	return new TodoMenuParameter(TodoMenu.SEARCH, null, content, null);
+}
+
+private static TodoMenuParameter finish(String[] parsed) {
     long id = Long.parseLong(parsed[1]);
     return new TodoMenuParameter(TodoMenu.FINISH, id, null, null);
   }

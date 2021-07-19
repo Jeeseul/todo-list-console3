@@ -10,6 +10,12 @@ public class TodoRepository {
   public TodoRepository() {
     this.todoList = new ArrayList<>();
   }
+  
+  public void TodoRepositorySetting(List<Todo> todoList) {
+	 for(Todo todo:todoList) {
+		 this.todoList.add(todo);
+	 }
+  }
 
   public void add(Todo todo) {
     todoList.add(todo);
@@ -31,6 +37,8 @@ public class TodoRepository {
     for (long id : ids) {
       Todo todo = find(id);
       todos.add(todo);
+//      System.out.println("=------------------------------===");
+//      System.out.println(todo);
     }
     return todos;
   }

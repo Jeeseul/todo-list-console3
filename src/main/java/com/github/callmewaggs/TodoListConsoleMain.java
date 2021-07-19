@@ -23,6 +23,7 @@ public class TodoListConsoleMain {
     todoServicesMapping.put(TodoMenu.UPDATE, new TodoUpdateProcessor(todoRepository));
     todoServicesMapping.put(TodoMenu.REMOVE, new TodoRemoveProcessor(todoRepository));
     todoServicesMapping.put(TodoMenu.FINISH, new TodoFinishProcessor(todoRepository));
+    todoServicesMapping.put(TodoMenu.SEARCH, new TodoFinishProcessor(todoRepository));
 
     IOHelper ioHelper = new IOHelper();
     TodoListConsole todoListConsole =

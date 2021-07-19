@@ -14,7 +14,9 @@ public enum TodoMenu {
 
   REMOVE("4"),
 
-  FINISH("5");
+  FINISH("5"),
+	
+  SEARCH("6");
 
   private String menuNumber;
 
